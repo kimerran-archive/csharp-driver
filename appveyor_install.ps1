@@ -71,6 +71,7 @@ If (!(Test-Path $env:CCM_PATH)) {
   pushd $env:CCM_PATH
   Start-Process python -ArgumentList "setup.py install" -Wait -NoNewWindow
   popd
+  Copy-Item "$($env:PYTHON)\Scripts\ccm.py" -Destination "$($env:PYTHON)\Scripts\ccm"
 }
 
 Write-Host "Set execution Policy"
